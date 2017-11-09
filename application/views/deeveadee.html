@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Deeveadee</title>
+        <link  href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/master.css">
+        <link href="/assets/fonts/Comfortaa-Regular.ttf" rel="stylesheet">
+    </head>
+    <body>
+<style>
+*{font-family: 'Comfortaa', cursive;}
+a{color:#fff;}
+#plop{position:fixed;
+  width:100%;}
+#navbar{position: fixed;z-index: 5;
+opacity:0.8;}
+td{z-index: 4;}
+#liste{position: absolute; top:25%;left:25%;}
+#dvd{
+  max-width: 25em;
+  width: 25em;
+}
+h1{text-align: center;}
+</style>
+        <div id="nav">
+            <ul id="navbar" class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">Accueil</a></li>
+                <li role="presentation"><a href="http://deeveadee.my/index.php/admin">Liste des DVD</a></li>
+                <li role="presentation"><a href="#">Connexion</a></li>
+            </ul>
+            </div>
+            <div>
+            <img id="plop" src="https://fanart.tv/fanart/music/148ddea2-6839-4354-8e2c-5dfadf136b7f/artistbackground/tenacious-d-5293a85ed5165.jpg" alt="">
+            <div id='scale'></div>
+            <h1 id="titre" style="font-family : Comfortaa">Deeveadee</h1>
+            <p  id="descri" style="font-family : Comfortaa">Bienvenue sur la plateforme Deeveadee </p>
+</div>
+<div class="container-fluid"id="liste">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>TOP DVD</h1>
+      <div class="row">
+
+        <?php foreach ($Dvd as $film): ?>
+          <div class="col-md-6" id="dvd">
+            <div class="thumbnail">
+            <img alt="Bootstrap Thumbnail First" src="/assets/img/DVD<?=$film['numD']?>.jpg" />
+              <div class="caption">
+                <h1><?= $film['titreD'] ?></h1>
+                <h3><?= $film['auteurD'] ?></h3>
+                <p><?= $film['catégorieD'] ?></p>
+                <p><?= $film['annéeD'] ?></p>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </body>
+</html>
